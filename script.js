@@ -12,7 +12,7 @@ function injectPopup() {
                 <span class="popup-close" onclick="closeDonationPopup()">×</span>
                 <h2>Keep The Historical Herald free!</h2>
                 <p>The Historical Herald isn't hidden behind a paywall, and I want to keep it that way. The website costs me money to maintain, and I rely on donations to ensure it stays free.</p>
-                <p>I need $[] a year to cover the cost!</p>
+                <p>I need $11 a year to cover the cost!</p>
                 <a href="https://venmo.com/u/zugzwangular" target="_blank" class="popup-donate-button">Make a Donation</a>
                 <p class="popup-reminder">*Please include "Historical Herald" in your note for tracking!</p>
             </div>
