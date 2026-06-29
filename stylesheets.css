@@ -110,8 +110,6 @@ section img {
     } /* This closes .navbar */
 } /* <--- THIS IS THE MISSING BRACKET that closes the @media rule */
 
-/* --- 6. POP-UP (THE "BLOCKING" FIX) --- */
-/* Use the class name here so it applies to the wrapper */
 /* --- 6. POP-UP (THE "FIXED" FIX) --- */
 .popup-overlay {
     display: none; 
@@ -131,6 +129,7 @@ section img {
     width: 85%;  
     max-width: 400px;  
     text-align: center;
+    box-sizing: border-box; /* Crucial for mobile sizing */
     
     /* This centers the box perfectly in the middle of the screen */
     position: fixed !important;
@@ -168,15 +167,15 @@ section img {
     font-weight: bold;
     border: 5px solid black;
     width: fit-content;
-
 }
 .popup-donate-button:hover, .donate-button:hover {
-    background-color: #008CFF;   /* Swap background to black */
-    color: #00000;            /* Swap text to red */
+    background-color: #008CFF;   /* Swap background to blue */
+    color: #00000;            
     transform: scale(1.05);    /* Makes the button grow slightly (5%) */
     cursor: pointer;           /* Ensures the "hand" icon appears */
     transition: 0.2s;
 }
+
 /* --- 8. NEWS TICKER --- */
 .news-ticker {
     position: fixed;
@@ -220,6 +219,7 @@ section img {
 .news-ticker:hover .ticker-content {
     animation-play-state: paused;
 }
+
 footer {
     text-align: center;
     padding: 20px;
@@ -228,9 +228,7 @@ footer {
     font-size: 14px;
     color: #555;
 }
-body {
-    padding-bottom: 60px; /* Pushes your content up so the footer never covers it */
-}
+
 /* The main box for each edition */
 .edition-container {
     display: flex;
@@ -243,6 +241,7 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box; /* 🛠️ FIXES DESKTOP OVERFLOW BUG */
 }
 
 /* Left Column: Text space */
@@ -300,11 +299,8 @@ body {
     .edition-container {
         flex-direction: column-reverse; /* Puts image at top or bottom on mobile */
         text-align: center;
-        
-        /* 🛠️ ADD THESE THREE LINES TO FIX THE EDGE CLIPPING */
-        width: 90%;             /* Gives it a 5% margin space on left and right */
-        box-sizing: border-box; /* Forces padding/borders to stay INSIDE the box */
-        padding: 15px;          /* Shrinks padding slightly so it looks better on small screens */
+        width: 90% !important;          /* Keeps it cleanly spaced on phones */
+        padding: 15px;                  /* Shrinks inside spacing nicely */
     }
     
     .edition-info {
@@ -316,10 +312,9 @@ body {
         margin-bottom: 20px;
     }
     
-    /* 🛠️ ADD THIS TO FIX THE POPUP ISSUES ON PHONES TOO */
-    .your-popup-class-name {
+    /* 🛠️ PLUGGED IN POPUP-CONTENT CLASS TO FIX PHONE EDGES */
+    .popup-content {
         width: 90% !important;
-        max-width: 500px;
-        box-sizing: border-box;
+        max-width: 400px;
     }
 }
