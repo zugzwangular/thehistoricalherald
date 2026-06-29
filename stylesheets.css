@@ -300,12 +300,26 @@ body {
     .edition-container {
         flex-direction: column-reverse; /* Puts image at top or bottom on mobile */
         text-align: center;
+        
+        /* 🛠️ ADD THESE THREE LINES TO FIX THE EDGE CLIPPING */
+        width: 90%;             /* Gives it a 5% margin space on left and right */
+        box-sizing: border-box; /* Forces padding/borders to stay INSIDE the box */
+        padding: 15px;          /* Shrinks padding slightly so it looks better on small screens */
     }
+    
     .edition-info {
         padding-right: 0;
         align-items: center; /* Centers button on mobile for easier tapping */
     }
+    
     .edition-image {
         margin-bottom: 20px;
+    }
+    
+    /* 🛠️ ADD THIS TO FIX THE POPUP ISSUES ON PHONES TOO */
+    .your-popup-class-name {
+        width: 90% !important;
+        max-width: 500px;
+        box-sizing: border-box;
     }
 }
